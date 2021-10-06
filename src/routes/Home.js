@@ -6,7 +6,7 @@ import './Home.css';
 class Home extends React.Component{
     state = {
         isLoading: true,
-        movie: [],
+        // movie: [],
       };
       getMovies = async () => {
         const {
@@ -15,7 +15,8 @@ class Home extends React.Component{
           },
         } = await axios.get(
           "https://yts.mx/api/v2/list_movies.json?sort_by=rating"
-        );
+          );
+        //api에 있는 데이터를 받아오는 것
         this.setState({ movies: movies, isLoading: false });
       };
       //async 와 await은 동시에 사용해야 한다.
